@@ -2,6 +2,10 @@ package com.algorithm.study.string;
 
 import java.util.Arrays;
 
+/**
+ * 冒泡排序：比较两个相邻的元素，将值大的交换到右边
+ *
+ */
 public class BubbleSort {
     static int count = 0;
     public static void main(String[] args) {
