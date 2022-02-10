@@ -1,7 +1,10 @@
-package com.algorithm.study.string;
+package com.algorithm.study.sort;
 
 import java.util.Arrays;
 
+/**
+ * @author fuguangwei
+ */
 public class BubbleSort {
     static int count = 0;
     public static void main(String[] args) {
