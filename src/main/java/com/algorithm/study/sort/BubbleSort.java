@@ -3,7 +3,8 @@ package com.algorithm.study.sort;
 import java.util.Arrays;
 
 /**
- * @author fuguangwei
+ * 冒泡排序：比较两个相邻的元素，将值大的交换到右边
+ *
  */
 public class BubbleSort {
     static int count = 0;
