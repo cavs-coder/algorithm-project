@@ -6,12 +6,12 @@ import java.util.Arrays;
  * 34. 在排序数组中查找元素的第一个和最后一个位置
  *  // TODO: 2022/02/16 00:00 二分法无思路。参考答案，利用两个二分法分别求左右边界完成。
  */
-public class SearchRange {
+public class SearchRange_01 {
 
     public static void main(String[] args) {
         int[] nums = {5, 7, 7, 8, 8, 10};
         int target = 8;
-        System.out.println(Arrays.toString(new SearchRange().searchRange(nums, target)));
+        System.out.println(Arrays.toString(new SearchRange_01().searchRange(nums, target)));
     }
 
     public int[] searchRange(int[] nums, int target) {
