@@ -1,4 +1,4 @@
-package com.algorithm.study.array._2_remove_element;
+package com.algorithm.study.array._2_double_pointer;
 
 import java.util.Arrays;
 
