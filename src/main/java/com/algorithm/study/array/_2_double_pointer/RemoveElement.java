@@ -4,7 +4,6 @@ import java.util.Arrays;
 
 /**
  * 27. 移除元素
- * 双指针法：通过一个快指针和一个慢指针在一个for循环里完成两个for循环的工作
  */
 public class RemoveElement {
 

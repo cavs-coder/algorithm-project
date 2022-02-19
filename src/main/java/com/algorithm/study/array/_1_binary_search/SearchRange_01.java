@@ -3,7 +3,7 @@ package com.algorithm.study.array._1_binary_search;
 import java.util.Arrays;
 
 /**
- * 34. 在排序数组中查找元素的第一个和最后一个位置
+ * 34. 在排序数组中查找元素的第一个和最后一个位置 medium
  *  // TODO: 2022/02/16 00:00 二分法无思路。参考答案，利用两个二分法分别求左右边界完成。
  */
 public class SearchRange_01 {
