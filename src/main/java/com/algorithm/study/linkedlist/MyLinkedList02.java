@@ -28,6 +28,10 @@ public class MyLinkedList02 {
 
     public MyLinkedList02() {
         size = 0;
+        head = new ListNode(-1);
+        tail = new ListNode(-1);
+        head.next = tail;
+        tail.prev = head;
     }
 
     public int get(int index) {
@@ -35,46 +39,78 @@ public class MyLinkedList02 {
             return -1;
         }
 
-        ListNode dummyHead = new ListNode(-1);
-        ListNode dummyTail = new ListNode(-1);
-        dummyHead.next = head;
-        head.prev = dummyHead;
-        tail.next = dummyTail;
-        dummyTail.prev = tail;
-
-        ListNode cur = dummyHead;
-        if (index < (size - 1) / 2) {
+        ListNode cur = head;
+        // 0 1 2 3 4 5
+        // 0 1 2 3 4 5 6
+        if (index <= (size - 1) / 2) {
             for (int i = 0; i <= index; i++) {
                 cur = cur.next;
             }
-        } else {        // 0 1 2 3 4 5 6 7 8
-            cur = dummyTail;
+        } else {
+            cur = tail;
             for (int i = size - 1; i >= index; i--) {
                 cur = cur.prev;
             }
         }
 
-        head = dummyHead.next;
-        head.prev = null;
-        tail = dummyTail.prev;
-        tail.next = null;
-
         return cur.val;
     }
 
     public void addAtHead(int val) {
+        ListNode toAdd = new ListNode(val);
+        toAdd.next = head.next;
+        head.next.prev = toAdd;
+        head.next = toAdd;
+        toAdd.prev = head;
 
+        size++;
     }
 
     public void addAtTail(int val) {
+        ListNode toAdd = new ListNode(val);
+        toAdd.prev = tail.prev;
+        tail.prev.next = toAdd;
+        toAdd.next = tail;
+        tail.prev = toAdd;
 
+        size++;
     }
 
     public void addAtIndex(int index, int val) {
+        if (index > size) {
+            return;
+        }
+        index = Math.max(index, 0);
 
+        ListNode pre = head;
+        // 0 1 2 3 4 5
+        // 0 1 2 3 4 5 6
+        for (int i = 0; i < index; i++) {
+            pre = pre.next;
+        }
+
+        ListNode toAdd = new ListNode(val);
+        toAdd.next = pre.next;
+        pre.next.prev = toAdd;
+        pre.next = toAdd;
+        toAdd.prev = pre;
+
+        size++;
     }
 
     public void deleteAtIndex(int index) {
+        if (index < 0 || index >= size) {
+            return;
+        }
 
+        ListNode pre = head;
+        for (int i = 0; i < index; i++) {
+            pre = pre.next;
+        }
+
+        pre.next = pre.next.next;
+        pre.next.prev = pre;
+
+        size--;
     }
 }

@@ -27,6 +27,7 @@ public class MyLinkedList01 {
 
     public MyLinkedList01() {
         size = 0;
+        head = new ListNode(-1);
     }
 
     public int get(int index) {
@@ -34,9 +35,7 @@ public class MyLinkedList01 {
             return -1;
         }
 
-        ListNode dummy = new ListNode(-1);
-        dummy.next = head;
-        ListNode cur = dummy;
+        ListNode cur = head;
         for (int i = 0; i <= index; i++) {
             cur = cur.next;
         }
@@ -56,14 +55,9 @@ public class MyLinkedList01 {
         if (index > size) {
             return;
         }
+        index = Math.max(index, 0);
 
-        if (index < 0) {
-            index = 0;
-        }
-
-        ListNode dummy = new ListNode(-1);
-        dummy.next = head;
-        ListNode pre = dummy;
+        ListNode pre = head;
         for (int i = 0; i < index; i++) {
             pre = pre.next;
         }
@@ -71,9 +65,8 @@ public class MyLinkedList01 {
         ListNode toAdd = new ListNode(val);
         toAdd.next = pre.next;
         pre.next = toAdd;
-        size++;
 
-        head = dummy.next;
+        size++;
     }
 
     public void deleteAtIndex(int index) {
@@ -81,16 +74,13 @@ public class MyLinkedList01 {
             return;
         }
 
-        ListNode dummy = new ListNode(-1);
-        dummy.next = head;
-        ListNode pre = dummy;
+        ListNode pre = head;
         for (int i = 0; i < index; i++) {
             pre = pre.next;
         }
 
         pre.next = pre.next.next;
-        size--;
 
-        head = dummy.next;
+        size--;
     }
 }
