@@ -16,10 +16,9 @@ public class MyLinkedList02 {
         ListNode.loop(myLinkedList.head);
         int i = myLinkedList.get(1);
         System.out.println(i);
-        myLinkedList.deleteAtIndex(1);
+        myLinkedList.deleteAtIndex(2);
         ListNode.loop(myLinkedList.head);
-        int b = myLinkedList.get(1);
-        System.out.println(b);
+
     }
 
     int size;

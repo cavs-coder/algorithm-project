@@ -39,8 +39,8 @@ public class GetIntersectionNode {
 
     /**
      * 解法二：若相交尾部一定对其
-     * 1 2 3 4 5 6 7 1 2 3
-     * 1 2 3 1 2 3 4 5 6 7
+     * 1 2 3 4 5 6 7
+     * 1 2 3
      */
     public ListNode getIntersectionNode02(ListNode headA, ListNode headB) {
 
@@ -85,5 +85,46 @@ public class GetIntersectionNode {
         }
 
         return null;
+    }
+
+    /**
+     * 解法三：若有相交的点，假如headA与headB相交前分别为 a 与 b 个节点，相交后为相同的 c 个节点
+     * 那么，a+c+b = b+c+a
+     */
+    public ListNode getIntersectionNode03(ListNode headA, ListNode headB) {
+
+        ListNode curA = headA;
+        ListNode curB = headB;
+
+        while (true) {
+            if (curA == curB) {
+                return curA;
+            }
+            if (curA.next == null && curB.next == null) {
+                break;
+            }
+            curA = curA.next != null ? curA.next : headB;
+            curB = curB.next != null ? curB.next : headA;
+        }
+
+        return null;
+    }
+
+    /**
+     * 解法三的第二种写法，跳出循环的条件：
+     * 1、有交点
+     * 2、两条链表交换后走到底无交点，都为 null
+     */
+    public ListNode getIntersectionNode04(ListNode headA, ListNode headB) {
+
+        ListNode curA = headA;
+        ListNode curB = headB;
+
+        while (curA != curB) {
+            curA = curA == null ? headB : curA.next;
+            curB = curB == null ? headA : curB.next;
+        }
+
+        return curA;
     }
 }

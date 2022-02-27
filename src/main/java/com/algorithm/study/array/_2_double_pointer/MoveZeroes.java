@@ -15,19 +15,16 @@ public class MoveZeroes {
     }
 
     public void moveZeroes(int[] nums) {
-        int val = 0;
-
-        moveValue(nums, val);
-    }
-
-    private void moveValue(int[] nums, int val) {
-
-        int slow = 0;
-        for (int fast = 0; fast < nums.length; fast++) {
-            if (nums[fast] != val) {
-                nums[slow++] = nums[fast];
-                nums[fast] = 0;
+        int l = 0;
+        int r = 0;
+        while(r < nums.length){
+            if(nums[r] != 0){
+                int temp = nums[l];
+                nums[l] = nums[r];
+                nums[r] = temp;
+                l++;
             }
+            r++;
         }
     }
 }
