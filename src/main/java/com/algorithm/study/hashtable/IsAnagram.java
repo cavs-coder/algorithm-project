@@ -44,6 +44,7 @@ public class IsAnagram {
         }
         return result;
     }
+
     /**
      * 解法二：数组做哈希表
      */
