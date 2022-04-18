@@ -1,34 +1,31 @@
 package com.algorithm.study;
 
-import java.util.*;
-
 public class Test {
 
     public static void main(String[] args) {
-        int[] nums1 = {1, 2, 2, 1};
+        int[] nums1 = {1, -2, -5, -4, -3, 3, 3, 5};
         int[] nums2 = {2, 2};
-        System.out.println(new Test().isHappy(19));
+        System.out.println("【" + new Test().reverseLeftWords("abcdefg", 2) + "】");
+//        System.out.println(Arrays.toString(new Test().fourSumCount(nums1, 9)));
     }
 
-    public boolean isHappy(int n) {
+    // s = "abcdefg", k = 2
+    public String reverseLeftWords(String s, int n) {
 
-        Set<Integer> set = new HashSet<>();
-        int sum;
-        while (n != 1) {
-            sum = 0;
-            while (n > 0) {
-                int a = n % 10;
-                sum += a * a;
-                n /= 10;
-            }
+        char[] chars = s.toCharArray();
+        int len = chars.length;
+        swap(chars, 0, len - 1);
+        swap(chars, 0, len - n - 1);
+        swap(chars, len - n, len - 1);
 
-            if (set.contains(sum)) {
-                return false;
-            }
-            set.add(sum);
-            n = sum;
+        return String.valueOf(chars);
+    }
+
+    private void swap(char[] chars, int l, int r) {
+        while (l < r) {
+            char temp = chars[l];
+            chars[l++] = chars[r];
+            chars[r--] = temp;
         }
-
-        return true;
     }
 }
