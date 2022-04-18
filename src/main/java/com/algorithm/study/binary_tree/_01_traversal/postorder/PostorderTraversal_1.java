@@ -1,12 +1,15 @@
-package com.algorithm.study.binary_tree;
+package com.algorithm.study.binary_tree._01_traversal.postorder;
+
+import com.algorithm.study.binary_tree.TreeNode;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * 145. 二叉树的后序遍历
+ *      递归法
  */
-public class _02_PostorderTraversal {
+public class PostorderTraversal_1 {
 
     public List<Integer> postorderTraversal(TreeNode root) {
         List<Integer> result = new ArrayList<>();
