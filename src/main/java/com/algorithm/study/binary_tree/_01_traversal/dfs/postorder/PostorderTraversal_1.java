@@ -1,4 +1,4 @@
-package com.algorithm.study.binary_tree._01_traversal.postorder;
+package com.algorithm.study.binary_tree._01_traversal.dfs.postorder;
 
 import com.algorithm.study.binary_tree.TreeNode;
 

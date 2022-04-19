@@ -1,4 +1,4 @@
-package com.algorithm.study.binary_tree._01_traversal.preorder;
+package com.algorithm.study.binary_tree._01_traversal.dfs.preorder;
 
 import com.algorithm.study.binary_tree.TreeNode;
 
