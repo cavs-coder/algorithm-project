@@ -7,7 +7,7 @@ import java.util.List;
 
 /**
  * 637. 二叉树的层平均值
- * DFS
+ * DFS递归
  */
 public class _04_AverageOfLevels_1 {
 

@@ -31,7 +31,6 @@ public class _08_MinDepth_2 {
                     return deep;
                 }
 
-
                 if (node.left != null) {
                     queue.offer(node.left);
                 }

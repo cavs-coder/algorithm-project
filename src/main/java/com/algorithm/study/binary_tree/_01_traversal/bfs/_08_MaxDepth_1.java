@@ -4,7 +4,7 @@ import com.algorithm.study.binary_tree.TreeNode;
 
 /**
  * 104. 二叉树的最大深度
- * DFS
+ * DFS递归
  */
 public class _08_MaxDepth_1 {
 

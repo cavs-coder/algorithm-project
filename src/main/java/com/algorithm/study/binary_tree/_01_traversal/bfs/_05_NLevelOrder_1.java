@@ -7,7 +7,7 @@ import java.util.List;
 
 /**
  * 429. N 叉树的层序遍历
- * DFS
+ * DFS递归
  */
 public class _05_NLevelOrder_1 {
 
