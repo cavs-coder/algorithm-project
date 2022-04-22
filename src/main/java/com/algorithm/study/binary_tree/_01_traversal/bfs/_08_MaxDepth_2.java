@@ -2,38 +2,21 @@ package com.algorithm.study.binary_tree._01_traversal.bfs;
 
 import com.algorithm.study.binary_tree.TreeNode;
 
-import java.util.LinkedList;
-import java.util.Queue;
-
 /**
  * 104. 二叉树的最大深度
- * BFS
+ * DFS递归
  */
 public class _08_MaxDepth_2 {
 
     public int maxDepth(TreeNode root) {
-        if (root == null) {
-            return 0;
-        }
+        return depthFirst(root);
+    }
 
-        Queue<TreeNode> queue = new LinkedList<>();
-        queue.offer(root);
+    private int depthFirst(TreeNode node) {
+        if (node == null) return 0;
 
-        int deep = 0;
-        while (!queue.isEmpty()) {
-            int len = queue.size();
-            deep++;
-            for (int i = 0; i < len; i++) {
-                TreeNode node = queue.poll();
-                if (node.left != null) {
-                    queue.offer(node.left);
-                }
-                if (node.right != null) {
-                    queue.offer(node.right);
-                }
-            }
-        }
-
-        return deep;
+        int leftDepth = depthFirst(node.left);
+        int rightDepth = depthFirst(node.right);
+        return Math.max(leftDepth, rightDepth) + 1;
     }
 }
