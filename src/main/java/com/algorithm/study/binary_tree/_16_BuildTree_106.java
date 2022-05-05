@@ -1,19 +1,17 @@
 package com.algorithm.study.binary_tree;
 
-import java.util.Arrays;
-
 /**
  * 106. 从中序与后序遍历序列构造二叉树
  * 左闭右开
  */
-public class _15_BuildTree {
+public class _16_BuildTree_106 {
 
     public TreeNode buildTree(int[] inorder, int[] postorder) {
         return myBuildTree(inorder, 0, inorder.length, postorder, 0, postorder.length);
     }
 
     private TreeNode myBuildTree(int[] inorder, int inLeft, int inRight, int[] postorder, int postLeft, int postRight) {
-        if (inRight - inLeft < 1) {
+        if (inRight - inLeft == 0) {
             return null;
         }
 
