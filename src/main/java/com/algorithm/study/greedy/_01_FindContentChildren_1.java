@@ -8,6 +8,7 @@ import java.util.stream.Collectors;
 
 /**
  * 455. 分发饼干
+ * 菜鸡解法
  */
 public class _01_FindContentChildren_1 {
 
