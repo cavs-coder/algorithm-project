@@ -6,7 +6,7 @@ public class Test {
         int[] nums1 = {1, -2, -5, -4, -3, 3, 3, 5};
         int[] nums2 = {2, 2};
         System.out.println("【" + new Test().reverseLeftWords("abcdefg", 2) + "】");
-//        System.out.println(Arrays.toString(new Test().fourSumCount(nums1, 9)));
+//        System.out.println(Arrays.toString(new Test().fourSumCount(nums1, 9))); aaa
     }
 
     // s = "abcdefg", k = 2
