@@ -1,9 +1,5 @@
 package com.algorithm.study.greedy;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 /**
  * 134. 加油站
  * 贪心：时间复杂度O(n)、空间复杂度O(1)
@@ -13,7 +9,7 @@ import java.util.List;
  *      而且局部[i,j]必不可能有起点，因为都会在j处终止，此时起点需要从j+1处算起。
  * 全局：
  *      若是存在满足条件的起点加油站，剩余总油量total必定大于等于0（此前的rest与每一步的（gas[x] - cost[x]）相加，
- *      得出新的rest需要大于等于0才能继续下一步，局部推全局）。
+ *      得出新的rest需要大于等于0才能继续下一步，局部推全局）。total>=0时，无论j处出现多少净负的油量，j后面净正的油量。
  *      若是total小于0，必定不满足条件，若是total大于等于0，返回记录的j+1
  */
 public class _08_CanCompleteCircuit_1 {
