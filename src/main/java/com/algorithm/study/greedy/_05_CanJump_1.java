@@ -11,8 +11,6 @@ package com.algorithm.study.greedy;
  */
 public class _05_CanJump_1 {
 
-    private int i;
-
     public boolean canJump(int[] nums) {
         //能覆盖的最大索引
         int coverIndex = 0;
