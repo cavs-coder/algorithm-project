@@ -30,7 +30,7 @@ public class _15_Merge_1 {
                 //两个区间有相交
                 right = Math.max(intervals[i][1], right);
             } else {
-                //两个区间不想交，收集结果，重置区间边界
+                //两个区间不相交，收集结果，重置区间边界
                 result.add(new int[]{left, right});
                 left = intervals[i][0];
                 right = intervals[i][1];
