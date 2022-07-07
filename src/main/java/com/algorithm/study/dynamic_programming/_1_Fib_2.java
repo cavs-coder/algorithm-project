@@ -16,22 +16,21 @@ package com.algorithm.study.dynamic_programming;
  *           N = 5
  *           0 1 1 2 3 5
  *
- * dp:时间复杂度O(n)、空间复杂度O(n)
+ * dp：因为当前状态依赖前两个，所以可以做空间上的优化，用变量记录依赖值。
+ * dp：时间复杂度O(n)、空间复杂度从数组的O(n)变为O(1)
  */
 public class _1_Fib_2 {
 
     public int fib(int n) {
-        if (n <= 1) {
-            return n;
-        }
-
-        int[] dp = new int[n + 1];
-        dp[0] = 0;
-        dp[1] = 1;
+        if (n <= 1) return n;
+        int a = 0;
+        int b = 1;
+        int c = 0;
         for (int i = 2; i <= n; i++) {
-            dp[i] = dp[i - 1] + dp[i - 2];
+            c = a + b;
+            a = b;
+            b = c;
         }
-
-        return dp[n];
+        return c;
     }
 }
