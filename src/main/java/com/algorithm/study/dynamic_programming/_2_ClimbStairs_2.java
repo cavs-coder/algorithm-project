@@ -17,8 +17,8 @@ package com.algorithm.study.dynamic_programming;
  *      5、举例推导验证
  *          1 2 3 5 8
  *
- * dp：因为当前状态依赖前两个，所以可以做空间上的优化，用变量记录依赖值。
- * dp：时间复杂度O(n)、空间复杂度从数组的O(n)变为O(1)
+ * dp：因为当前状态依赖前两个，可以使用滚动数组的思想做空间上的优化，用变量记录依赖值，只需要使用有限的额外空间。
+ * dp：时间复杂度O(n)、空间复杂度O(1)
  */
 public class _2_ClimbStairs_2 {
 

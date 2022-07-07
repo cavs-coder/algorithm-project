@@ -7,7 +7,7 @@ package com.algorithm.study.dynamic_programming;
  *           dp[i]代表第i个数的斐波那契数值
  *        2、确定递推公式
  *           状态转移方程：dp[i]=dp[i-1]+dp[i-2]
- *        3、dp数组如何初始化
+ *        3、确定dp数组如何初始化
  *           dp[0]=0
  *           dp[1]=1
  *        4、确定遍历顺序
