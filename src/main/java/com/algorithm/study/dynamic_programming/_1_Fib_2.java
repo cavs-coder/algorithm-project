@@ -3,9 +3,9 @@ package com.algorithm.study.dynamic_programming;
 /**
  * 509. 斐波那契数
  * dp:
- *        1、确定dp数组以及下标的含义
+ *        1、确定dp数组元素及其下标的含义
  *           dp[i]代表第i个数的斐波那契数值
- *        2、确定递推公式
+ *        2、确定动态规划转移方程
  *           状态转移方程：dp[i]=dp[i-1]+dp[i-2]
  *        3、确定dp数组如何初始化
  *           dp[0]=0
