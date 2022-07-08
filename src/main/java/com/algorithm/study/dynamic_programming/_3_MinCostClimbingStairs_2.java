@@ -7,7 +7,7 @@ package com.algorithm.study.dynamic_programming;
  *
  * dp：
  *      1、确定dp数组元素及其下标的含义：dp[i]表示到达第i个台阶所需要的最小花费
- *      2、确定动态规划转移方程：dp[i] = Math.min(dp[i-2] + cost[i-2], dp[i-1] + cost[i-1])
+ *      2、确定状态转移方程：dp[i] = Math.min(dp[i-2] + cost[i-2], dp[i-1] + cost[i-1])
  *      3、确定dp数组如何初始化：题意可从下标0或1开始爬楼梯，所以dp[0]=dp[1]=0
  *      4、确定遍历顺序：从递推公式可以看出依赖前两个状态，所以从前往后
  *      5、举例推导dp数组：
