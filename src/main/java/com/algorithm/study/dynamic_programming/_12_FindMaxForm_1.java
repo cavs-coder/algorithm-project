@@ -45,6 +45,9 @@ import java.util.Arrays;
  *   1 [1, 2, 2, 2]
  *   2 [1, 2, 3, 3]
  *   3 [1, 2, 3, 3]
+ *
+ *  dp：时间复杂度O(l*m*n+L)，l为strs长度，L为strs里面所有字符串长度之和。
+ *      空间复杂度O(mn)，创建的二维数组
  */
 public class _12_FindMaxForm_1 {
 
