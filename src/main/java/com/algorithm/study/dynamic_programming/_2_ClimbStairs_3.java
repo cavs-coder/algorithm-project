@@ -35,14 +35,29 @@ package com.algorithm.study.dynamic_programming;
  */
 public class _2_ClimbStairs_3 {
 
-    public int climbStairs(int n) {
+    public int climbStairs1(int n) {
         int[] dp = new int[n + 1];
         dp[0] = 1;
-        int[] nums = {1,2};
-        for(int i = 0; i <= n; i++){
-            for(int j = 0; j < nums.length; j++){
-                if(i < nums[j]) continue;
+        int[] nums = {1, 2};
+        for (int i = 0; i <= n; i++) {
+            for (int j = 0; j < nums.length; j++) {
+                if (i < nums[j]) continue;
                 dp[i] += dp[i - nums[j]];
+            }
+        }
+
+        return dp[n];
+    }
+
+    public int climbStairs2(int n) {
+        int[] dp = new int[n + 1];
+        dp[0] = 1;
+        //单次可以爬的楼梯阶数
+        int count = 2;
+        for (int i = 0; i <= n; i++) {
+            for (int j = 1; j <= count; j++) {
+                if (i < j) continue;
+                dp[i] += dp[i - j];
             }
         }
 
