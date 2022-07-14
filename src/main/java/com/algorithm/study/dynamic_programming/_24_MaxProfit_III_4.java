@@ -2,9 +2,8 @@ package com.algorithm.study.dynamic_programming;
 
 /**
  * 123. 买卖股票的最佳时机 III
- *
- * 买卖股票dp通用解法：时间复杂度O(n*k)   n*k/2，空间复杂度O(n*k)    n*(2*k+1)
- * dp：时间复杂度O(n)，空间复杂度O(n)，O(n*5) ==> O(n)
+ * 买卖股票dp通用解法，优化时间复杂度：时间复杂度O(n*k)   n*k/2，空间复杂度O(k)  2*k+1
+ * dp：优化空间复杂度，时间复杂度O(n)，空间复杂度O(1)
  *
  * dp[i][0]：不操作。
  * dp[i][1]：第一次买入剩余最大现金。
@@ -28,7 +27,7 @@ package com.algorithm.study.dynamic_programming;
  *
  * dp[i][4] >= dp[i][2]，当存在两个不相同的递增区间时，dp[i][4] > dp[i][2]，当至多只有一个递增区间时，dp[i][4] = dp[i][2]
  */
-public class _24_MaxProfit_III_2 {
+public class _24_MaxProfit_III_4 {
 
     public int maxProfit(int[] prices) {
         return maxProfit(2, prices);
@@ -37,18 +36,20 @@ public class _24_MaxProfit_III_2 {
     public int maxProfit(int k, int[] prices) {
         int n = prices.length;
         if (n == 0) return 0;
-        int[][] dp = new int[n][2 * k + 1];
+        int[] dp = new int[2 * k + 1];
         for (int i = 1; i < 2 * k; i += 2) {
-            dp[0][i] = -prices[0];
+            dp[i] = -prices[0];
         }
 
         for (int i = 1; i < prices.length; i++) {
             for (int j = 0; j < 2 * k; j += 2) {
-                dp[i][j + 1] = Math.max(dp[i - 1][j + 1], dp[i - 1][j] - prices[i]);
-                dp[i][j + 2] = Math.max(dp[i - 1][j + 2], dp[i - 1][j + 1] + prices[i]);
+                //倒过来遍历，防止前一天的旧值被更新
+                dp[j + 2] = Math.max(dp[j + 2], dp[j + 1] + prices[i]);
+                dp[j + 1] = Math.max(dp[j + 1], dp[j] - prices[i]);
             }
         }
 
-        return dp[n - 1][2 * k];
+        return dp[2 * k];
     }
+
 }
