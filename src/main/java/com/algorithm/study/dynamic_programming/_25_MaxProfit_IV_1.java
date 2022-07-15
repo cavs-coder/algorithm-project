@@ -3,6 +3,8 @@ package com.algorithm.study.dynamic_programming;
 /**
  * 188. 买卖股票的最佳时机 IV
  * 买卖股票dp通用解法：时间复杂度O(n*k)   n*k/2，空间复杂度O(n*k)    n*(2*k+1)
+ *
+ * dp[i]同一行的每一列互相直接没有联系，它只与前一天的各列，即前一天的各个状态有关联。
  */
 public class _25_MaxProfit_IV_1 {
 
