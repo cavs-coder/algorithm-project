@@ -30,7 +30,7 @@ package com.algorithm.study.dynamic_programming;
  *
  * dp：时间复杂度O(n)，空间复杂度O(n)，n*3
  */
-public class _26_maxProfit_V_1 {
+public class _26_MaxProfit_V_1 {
 
     public int maxProfit(int[] prices) {
         int[][] dp = new int[prices.length][3];
