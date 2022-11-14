@@ -1,9 +1,9 @@
 package com.algorithm.study.linkedlist;
 
 public class ListNode {
-    int val;
-    ListNode prev;
-    ListNode next;
+    public int val;
+    public ListNode prev;
+    public ListNode next;
 
     public ListNode() {
     }
@@ -18,7 +18,7 @@ public class ListNode {
         }
 
         ListNode cur = listNode;
-        StringBuilder builder = new StringBuilder(cur.val+"");
+        StringBuilder builder = new StringBuilder(cur.val + "");
         while (cur.next != null) {
             builder.append(" ==> ").append(cur.next.val);
             cur = cur.next;
