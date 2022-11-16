@@ -6,7 +6,7 @@ import com.algorithm.study.linkedlist.ListNode;
  * @author fuguangwei
  * @date 2022-11-14
  */
-public class _2_Solution_1 {
+public class _2_AddTwoNumbers_1 {
 
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         ListNode sentinel = new ListNode(-1);
